@@ -1,0 +1,13 @@
+# Byte-compiled / optimized
+__pycache__/
+
+# Distribution / packaging
+dist/
+
+# Environments
+.idea
+.env
+.venv
+env/
+venv/
+
