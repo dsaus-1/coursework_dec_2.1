@@ -44,28 +44,8 @@ def get_one_vacancy(vacancy_list, vacancy_id):
     return vacancy
 
 
-# ХЕШ-ТАБЛИЦА
-def create_blog_post(data):
-    if not user:
-        return {"message": "user does not exist!"}
-
-    ht = HashTable(10)
-
-    ht.add_key_value("title", data["title"])
-    ht.add_key_value("body", data["body"])
-    ht.add_key_value("date", now)
-    ht.add_key_value("user_id", user_id)
-
-    title = ht.get_value("title")
-    body = ht.get_value("body")
-    date = ht.get_value("date")
-    user_id = ht.get_value("user_id")
-
-    return {"message": f"{title}, {body}, {date}, {user_id}"}
-
-
 # БИНАРНОЕ ДЕРЕВО ПОИСКА
-def get_one_blog_post(vacancy_list, vacancy_id):
+def get_one_vacancy(vacancy_list, vacancy_id):
     random.shuffle(vacancy_list)
 
     bst = BinarySearchTree()
@@ -86,7 +66,7 @@ def get_one_blog_post(vacancy_list, vacancy_id):
 
 
 # ОЧЕРЕДЬ
-def get_numeric_post_bodies(vacancy_list):
+def get_companies_list(vacancy_list):
     q = Queue()
 
     for vacancy in vacancy_list:
