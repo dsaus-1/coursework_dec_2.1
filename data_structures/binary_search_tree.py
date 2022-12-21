@@ -10,12 +10,12 @@ class BinarySearchTree:
         self.root = None
 
     def insert(self, data):
-        """Дабавляет в бинорное дерево новый узел с данными Node(data)"""
+        """Дабавляет в бинарное дерево поиска новый узел с данными Node(data)"""
         pass
 
     def search(self, vacancy_id):
         """
-        Возвращае данные о вакансии с полем id, равным vacancy_id.
+        Возвращает данные о вакансии с полем id, равным vacancy_id.
         Возвращает False, если нет вакансии с id, равным vacancy_id.
         """
         pass
