@@ -20,7 +20,7 @@ def get_vacancies_descending(vacancy_list):
     return all_vacancies_ll.to_list()
 
 
-def get_all_users_ascending():
+def get_all_vacancies_ascending():
     """Получить список вакансия в исходном порядке от исходного"""
 
     all_vacancies_ll = LinkedList()
@@ -45,7 +45,7 @@ def get_one_vacancy(vacancy_list, vacancy_id):
 
 
 # БИНАРНОЕ ДЕРЕВО ПОИСКА
-def get_one_vacancy(vacancy_list, vacancy_id):
+def get_one_vacancy_bst(vacancy_list, vacancy_id):
     random.shuffle(vacancy_list)
 
     bst = BinarySearchTree()
