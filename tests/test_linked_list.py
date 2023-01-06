@@ -1,4 +1,4 @@
-from linked_list import LinkedList, Node
+from data_structures.linked_list import LinkedList, Node
 
 
 def test_print_ll_empty():

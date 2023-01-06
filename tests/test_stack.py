@@ -1,4 +1,4 @@
-from stack import Stack
+from data_structures.stack import Stack
 
 
 def test_to_list():

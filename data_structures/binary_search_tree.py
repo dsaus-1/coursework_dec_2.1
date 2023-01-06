@@ -12,7 +12,7 @@ class BinarySearchTree:
 
     def insert(self, data):
         """Дабавляет в бинарное дерево поиска новый узел с данными Node(data)"""
-        if self.root:
+        if self.root is not None:
             self._insert_recursive(self.root, data)
         else:
             self.root = Node(data)
@@ -37,18 +37,32 @@ class BinarySearchTree:
         Возвращает False, если нет вакансии с id, равным vacancy_id.
         """
         if self.root:
-            return self._search_recursive(self.root, vacancy_id)
+            return self._search_recursive(vacancy_id, self.root)
         return False
 
 
-    def _search_recursive(self, node, data):
-        if node.data['id'] == data:
+    def _search_recursive(self, vacancy_id, node):
+
+        if vacancy_id == node.data['id']:
+            #print(node.data)
             return node.data
 
-        if node.data['id'] > data and node.left:
-            self._search_recursive(node.left, data)
+        elif node.data['id'] > vacancy_id and node.left:
+            self._search_recursive(vacancy_id, node.left)
 
-        if node.data['id'] < data and node.right:
-            self._search_recursive(node.right, data)
+        elif node.data['id'] < vacancy_id and node.right:
+            self._search_recursive(vacancy_id, node.right)
 
         return False
+
+
+if __name__ == '__main__':
+    bst = BinarySearchTree()
+
+    bst.insert({'id': 4, 'company_name': 'name'})
+    bst.insert({'id': 8, 'company_name': 'name'})
+    bst.insert({'id': 2, 'company_name': 'name'})
+    bst.insert({'id': 9, 'company_name': 'name'})
+
+
+    print(bst.search(9))

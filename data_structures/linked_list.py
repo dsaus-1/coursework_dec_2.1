@@ -24,8 +24,14 @@ class LinkedList:
         """Возвращает строку-представление связанного списка для печати"""
         node_list = self.to_list()
         print_str = ''
-        for num, data in enumerate(node_list, 1):
-            print_str += f'{num}. {data}.\n'
+
+        for data in node_list:
+            if print_str:
+                print_str += f'{data} -> '
+            else:
+                print_str += f'{data} -> '
+        print_str += 'None'
+
         return print_str
 
 
@@ -58,3 +64,11 @@ class LinkedList:
             node = node.next_node
         return None
 
+if __name__ == '__main__':
+    ll = LinkedList()
+    node3 = Node(1000, None)
+    node2 = Node({'id': 1}, node3)
+    node1 = Node('data1', node2)
+    ll.head = node1
+
+    print(ll.print_ll())
