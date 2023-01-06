@@ -9,22 +9,52 @@ class LinkedList:
         self.head = None
         self.last_node = None
 
+
     def to_list(self):
         """Возвращает список, содержащий данные узлов связанного списка"""
-        pass
+        list_node = []
+        node = self.head
+        while node:
+            list_node.append(node.data)
+            node = node.next_node
+        return list_node
+
 
     def print_ll(self):
         """Возвращает строку-представление связанного списка для печати"""
-        pass
+        node_list = self.to_list()
+        print_str = ''
+        for num, data in enumerate(node_list, 1):
+            print_str += f'{num}. {data}.\n'
+        return print_str
+
 
     def insert_beginning(self, data):
         """Добавить данные в началов связанного списка"""
-        pass
+        if self.head is None:
+            self.head = self.tail = Node(data, None)
+            return None
+
+        new_node = Node(data, self.head)
+        self.head = new_node
+
 
     def insert_at_end(self, data):
         """Добавить данные в конец связанного списка"""
-        pass
+        if self.head is None:
+            self.head = self.tail = Node(data, None)
+            return None
+
+        self.tail.next_node = Node(data, None)
+        self.tail = self.tail.next_node
+
 
     def get_vacancy_by_id(self, vacancy_id):
         """Получить данные из связанного списка по id"""
-        pass
+        node = self.head
+        while node:
+            if node.data['id'] == vacancy_id:
+                return node.data
+            node = node.next_node
+        return None
+

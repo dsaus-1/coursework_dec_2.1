@@ -8,14 +8,28 @@ class Stack:
     def __init__(self):
         self.top = None
 
+
     def push(self, data):
         """Добавить элемент в стэк"""
-        pass
+        top_node = Node(data, self.top)
+        self.top = top_node
+
 
     def pop(self):
         """Удалить элемент из стека и вернуть значение этого элемента"""
-        pass
+        if self.top:
+            removed_data = self.top.data
+            self.top = self.top.next_node
+            return removed_data
+        return None
+
 
     def to_list(self):
         """Вернуть данные стека в виде списка"""
-        pass
+        list_node = []
+        node = self.top
+        while node:
+            list_node.append(node.data)
+            node = node.next_node
+        return list_node
+
