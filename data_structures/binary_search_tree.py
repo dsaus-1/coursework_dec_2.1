@@ -42,18 +42,18 @@ class BinarySearchTree:
 
 
     def _search_recursive(self, vacancy_id, node):
-
         if vacancy_id == node.data['id']:
-            #print(node.data)
             return node.data
 
-        elif node.data['id'] > vacancy_id and node.left:
-            self._search_recursive(vacancy_id, node.left)
+        if node.data['id'] > vacancy_id and node.left:
+            return self._search_recursive(vacancy_id, node.left)
 
         elif node.data['id'] < vacancy_id and node.right:
-            self._search_recursive(vacancy_id, node.right)
+            return self._search_recursive(vacancy_id, node.right)
 
         return False
+
+
 
 
 if __name__ == '__main__':
@@ -63,6 +63,5 @@ if __name__ == '__main__':
     bst.insert({'id': 8, 'company_name': 'name'})
     bst.insert({'id': 2, 'company_name': 'name'})
     bst.insert({'id': 9, 'company_name': 'name'})
-
 
     print(bst.search(9))
